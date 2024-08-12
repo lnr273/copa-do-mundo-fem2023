@@ -14,14 +14,14 @@ function GroupStanding() {
         getData()
     }, [])
 
-    const [ inputGrupo, setInputGrupo ] = useState('')
+    const [ grupoSelec, setGrupoSelec ] = useState('')
 
     return (
         <>
             <div className={styles.category}>
                 <select
-                    onChange={(e) => setInputGrupo(e.target.value)}
-                    value={inputGrupo}
+                    onChange={(e) => setGrupoSelec(e.target.value)}
+                    value={grupoSelec}
                 >
                     <option value="">Sem categoria especificada</option>
                     <option value="A">A</option>
@@ -51,8 +51,8 @@ function GroupStanding() {
                 </thead>
                 <tbody>
                     {
-                        inputGrupo ? 
-                            grupos.filter(grupo => grupo.grupo === inputGrupo).map(grupo => (
+                        grupoSelec ? 
+                            grupos.filter(grupo => grupo.grupo === grupoSelec).map(grupo => (
                                 <tr key={grupo.selecao}>
                                     <td>{grupo.posicao}</td>
                                     <td className={styles.left}>{grupo.selecao}</td>
