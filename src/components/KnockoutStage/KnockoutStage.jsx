@@ -21,7 +21,9 @@ function KnockoutStage({ fase }) {
             {
                 jogos.map(jogo => (
                     <section key={jogo.jogo} className={styles.jogo}>
-                        <h2 className={styles.titulo2}>{fase} {jogo.jogo} - chave {jogo.chave}</h2>
+                        <h2 className={styles.titulo2}>
+                            {jogo.fase} {jogo.jogo} - chave {jogo.chave}
+                        </h2>
                         <h3 className={styles.jogosDetalhes}>
                             <span className={styles.dia}>{ jogo.dia }</span>
                             <span className={styles.data}>{ jogo.data }</span>
@@ -47,7 +49,12 @@ function KnockoutStage({ fase }) {
                                 jogo.prorrogacao === "Sim" ? (
                                     <div className={styles.centralizar}>
                                         <span>Prorrogação ? {jogo.prorrogacao} | Placar Prorrogação {jogo.placar_prorrogacao}</span>
-                                        <span>Pênaltis ? {jogo.penaltis} | Placar Pênaltis {jogo.placar_penaltis}</span>
+                                        {
+                                            jogo.penaltis === "Sim" ?
+                                            <span>Pênaltis ? {jogo.penaltis} | Placar Pênaltis {jogo.placar_penaltis}</span>   
+                                            :
+                                            <span></span>
+                                        }
                                     </div>
                                 ) : (
                                     <div></div>
