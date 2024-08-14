@@ -1,0 +1,27 @@
+.jogos {
+    max-width: 1000px;
+    margin: auto;
+}
+
+body {
+    background-color: #ececec;
+}
+
+.tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tabs button {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.tabs button.active {
+    background-color: #111;
+    color: #fff;
+}

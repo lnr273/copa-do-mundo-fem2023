@@ -5,18 +5,16 @@ function ExtraInfoComponent({ jogo }) {
     return (
         <div>
             {
-                jogo.prorrogacao === "Sim" ? (
+                jogo.prorrogacao === "Sim" && (
                     <div className={styles.centralizar}>
                         <span>Prorrogação ? {jogo.prorrogacao} | Placar Prorrogação {jogo.placar_prorrogacao}</span>
                         {
-                            jogo.penaltis === "Sim" ?
-                            <span>Pênaltis ? {jogo.penaltis} | Placar Pênaltis {jogo.placar_penaltis}</span>   
-                            :
-                            <span></span>
+                            jogo.penaltis === "Sim" &&
+                            <div>
+                                <span>Pênaltis ? {jogo.penaltis} | Placar Pênaltis {jogo.placar_penaltis}</span>
+                            </div>  
                         }
                     </div>
-                ) : (
-                    <div></div>
                 )
             }
         </div>

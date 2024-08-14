@@ -15,23 +15,28 @@ function Card() {
     }, [])
 
     return (
-        grupos.map(grupo => 
-            <section className={styles.card} key={grupo.grupo}>
-                <div className={styles.row} style={{'backgroundColor': grupo.cor}}></div>
-                <h2>GRUPO { grupo.grupo }</h2>
-                <ul>
-                    {
-                        grupo.selecoes.map(pais => {
-                            return (
-                            <li key={pais.sigla}>
-                                <img src={`/bandeiras/${pais.imagem}.png`} alt={pais.selecao} />
-                                {pais.selecao}
-                            </li>);
-                        })
-                    }
-                </ul>
-            </section>
-        )
+        <section className={styles.cards}>
+            {
+                grupos.map(grupo => 
+                    <section className={styles.card} key={grupo.grupo}>
+                        <div className={styles.row} style={{'backgroundColor': grupo.cor}}></div>
+                        <h2>GRUPO { grupo.grupo }</h2>
+                        <ul>
+                            {
+                                grupo.selecoes.map(pais => {
+                                    return (
+                                    <li key={pais.sigla}>
+                                        <img src={`/bandeiras/${pais.imagem}.png`} alt={pais.selecao} />
+                                        {pais.selecao}
+                                    </li>);
+                                })
+                            }
+                        </ul>
+                    </section>
+                )
+            }
+        </section>
+        
     );
 }
 

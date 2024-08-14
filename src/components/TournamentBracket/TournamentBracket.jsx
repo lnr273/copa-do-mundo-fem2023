@@ -10,7 +10,7 @@ import WinnerComponent from '../WinnerComponent/WinnerComponent.jsx';
 function TournamentBracket({ fase }) {
 
     const [ jogos, setJogos ] = useState([])
-    const url = `https://raw.githubusercontent.com/edsonmaia/apifakecopa2023/main/${fase.toLowerCase()}-copa-2023.json`
+    const url = `https://raw.githubusercontent.com/edsonmaia/apifakecopa2023/main/${fase}-copa-2023.json`
 
     useEffect(() => {
         const buscarJogos = async () => {
@@ -25,7 +25,7 @@ function TournamentBracket({ fase }) {
         <section className={styles.jogos}>
             {
                 jogos.map(jogo => (
-                    <section key={jogo.jogo} className={styles.jogo}>
+                    <section key={jogo.id} className={styles.jogo}>
                         <HeaderComponent jogo={jogo} />
                         <DateTimeComponent jogo={jogo} />
                         <ScoreComponent jogo={jogo} />
